@@ -6,21 +6,17 @@ body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-// #map_address {
-//   width: 180px;
-//   text-align: center
-// }
-//
-// #start_address {
-//   width: 180px;
-//   text-align: center
-// }
-//
-// #end_address {
-//   width: 180px;
-//   text-align: center
-// }
+#address {
+  width: 250px;
+  text-align: left;
+}
 
+.address-search {
+  position: absolute;
+  float: center;
+  top: 580px;
+  text: center;
+}
 
 .station-s {
   background-image: url(green_car6.jpg);

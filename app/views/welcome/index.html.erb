@@ -1,10 +1,10 @@
-<div class='address-search' id="address1">
+<%= render partial: "map1" %>
+<div class='container address-search' id="address1">
   <%= form_tag("/welcome", method: "create") do %>
   <%= label_tag("Where Are You Going Today?") %><br>
-  <%= text_field_tag "address", "Address, City, State, and/or Zip",
-  :onclick => 'if($(this).val()=="Address, City, State, and/or Zip"){$(this).val("");};' %><br>
+  <%= text_field_tag "address", " Address, City, State, and/or Zip",
+  :onclick => 'if($(this).val()==" Address, City, State, and/or Zip"){$(this).val("");};' %><br>
   <button id="bb" type="submit" class="btn btn-default">Map It Out!</button>
   <% end %>
 </div>
-<%= render partial: "map1" %>
 <%= render partial: "facebook" %>
