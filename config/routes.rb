@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   # get '/dashboard', to: 'dashboard#show'
   root 'welcome#index'
   resources :stations
-  resources :welcome, only: [:index]
+  resources :welcome, only: [:index, :create]
 end

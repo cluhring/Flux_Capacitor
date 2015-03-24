@@ -25,24 +25,23 @@ class StationService
     end)
   end
 
-  def closest_stations
+  def closest_stations(lat, long)
     parse(connection.get("/api/alt-fuel-stations/v1/nearest.json?") do |req|
       req.params['api_key'] = ENV['nrel_secret']
       req.params['status'] = 'E'
-      # req.params['latitude'] = session[:latitude]
-      # req.params['longitude'] = session[:longitude]
-      req.params['latitude'] = 39.749747
-      req.params['longitude'] = -104.999977
+      req.params['latitude'] = lat
+      req.params['longitude'] = long
       req.params['radius'] = 5
       req.params['limit'] = 4
     end)
   end
 
-  def routed_stations
+  def routed_stations(lat1, long1, lat2, long2)
+    # require 'pry' ; binding.pry
     parse(connection.get("/api/alt-fuel-stations/v1/nearby-route.json?") do |req|
       req.params['api_key'] = ENV['nrel_secret']
       req.params['status'] = 'E'
-      req.params['route'] = 'LINESTRING(-104.999977 39.749747 , -87.63 41.87)' #(Turing, Chicago)
+      req.params['route'] = "LINESTRING(#{long1} #{lat1} , #{long2} #{lat2})" #(Turing, Chicago)
       req.params['distance'] = 5 #(Distance from route)
     end)
   end
