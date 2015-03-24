@@ -15,7 +15,6 @@ class Station < ActiveRecord::Base
   end
 
   def self.find_closest(lat, long)
-    # require 'pry' ; binding.pry
     service.closest_stations(lat, long)["fuel_stations"].map do |station|
       _build_object(station)
     end

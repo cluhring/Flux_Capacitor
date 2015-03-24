@@ -2,7 +2,7 @@ class StationService
   attr_reader :connection
 
   def initialize
-    # @connection = Faraday.new(url: "http://developer.nrel.gov/api/alt-fuel-stations/v1.json?api_key=NrcHZRCeouPvntxWjoqLW5IppXF4LwiDQLySiVMD&status=E&access=public&limit=200")
+    # @connection = Faraday.new(url: "http://developer.nrel.gov/api/alt-fuel-stations/v1.json?api_key=DEMO_KEY&status=E&access=public&limit=200")
     @connection = Faraday.new(url: "http://developer.nrel.gov/api/alt-fuel-stations/v1")
   end
 
@@ -31,13 +31,12 @@ class StationService
       req.params['status'] = 'E'
       req.params['latitude'] = lat
       req.params['longitude'] = long
-      req.params['radius'] = 5
+      req.params['radius'] = 35
       req.params['limit'] = 4
     end)
   end
 
   def routed_stations(lat1, long1, lat2, long2)
-    # require 'pry' ; binding.pry
     parse(connection.get("/api/alt-fuel-stations/v1/nearby-route.json?") do |req|
       req.params['api_key'] = ENV['nrel_secret']
       req.params['status'] = 'E'

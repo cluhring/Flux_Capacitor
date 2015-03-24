@@ -1,8 +1,5 @@
 <div class='map' id='map'>
   <script>
-  // var L = require('leaflet');
-  // require('leaflet-routing-machine'); // Adds L.Routing onto L
-  // require('lrm-mapbox');
 
   L.mapbox.accessToken = 'pk.eyJ1IjoiY2x1aHJpbmciLCJhIjoiNWF2Z1l6ZyJ9.8peAq7kTQyvXShlVv1K82w';
   // L.mapbox.accessToken = '<%= Rails.application.secrets.mapbox_token %>';
@@ -79,18 +76,18 @@
   var ctrl = L.Routing.control({
     waypoints: [
       L.latLng (e.latlng.lat, e.latlng.lng),
-      L.latLng (<%= session[:latitude] %>, <%= session[:longitude] %>)
+      L.latLng (<%= session[:latitude1] %>, <%= session[:longitude1] %>)
     ],
     routeWhileDragging: true,
     draggableWaypoints: true,
     geocoder: L.Control.Geocoder.nominatim()
   }).addTo(map);
 
-  $.ajax ({
-    data: { latitude1: current_lat, longitude1: current_long, latitude2: <%= session[:latitude] %>, longitude2: <%= session[:longitude] %> },
-    type: 'post',
-    url: '/stations'
-  });
+  // $.ajax ({
+  //   data: { latitude1: current_lat, longitude1: current_long, latitude2: <%= session[:latitude] %>, longitude2: <%= session[:longitude] %> },
+  //   type: 'post',
+  //   url: '/stations'
+  // });
   L.marker(e.latlng).addTo(map)
   .bindPopup("You are here").openPopup();
 

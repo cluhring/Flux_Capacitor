@@ -1,8 +1,5 @@
 <div class='address-search' id="address1">
   <%= form_tag("/welcome", method: "create") do %>
-  <!-- <%= label_tag("Starting Point") %><br>
-  <%= text_field_tag "start_address", "Address, City, State, and/or Zip",
-  :onclick => 'if($(this).val()=="Address, City, State, and/or Zip"){$(this).val("");};' %> -->
   <%= label_tag("Where Are You Going Today?") %><br>
   <%= text_field_tag "address", "Address, City, State, and/or Zip",
   :onclick => 'if($(this).val()=="Address, City, State, and/or Zip"){$(this).val("");};' %><br>
@@ -10,22 +7,4 @@
   <% end %>
 </div>
 <%= render partial: "map1" %>
-<
-  <!-- <button id="aa" class="btn btn-default">Add Another Destination</button><br>
-</div>
-
-<script>
-$(document).ready(function(){
-
-  $("#aa").click(function(){
-
-    $('#start_address').after("<p id='stopping_point'><label for='Starting_Point'>Stopping point</label><input type='text' class='input-large' name='map_address' id='map_address' value='Address, City, State, and/or Zip' onclick='if($(this).val()==&quot;Address, City, State, and/or Zip&quot;){$(this).val(&quot;&quot;);};''>"+
-    "<input type='submit' value='' class='stop_point' id='removeStoppingPoint'></p>");
-
-    $("#removeStoppingPoint").on('click', function(){
-      $(this).closest('p').remove();
-
-  });
-  });
-});
-</script> -->
+<%= render partial: "facebook" %>
