@@ -32,7 +32,7 @@ class StationService
       req.params['latitude'] = lat
       req.params['longitude'] = long
       req.params['radius'] = 35
-      req.params['limit'] = 4
+      req.params['limit'] = 5
     end)
   end
 
