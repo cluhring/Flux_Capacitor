@@ -1,0 +1,22 @@
+<div id="facebook" class="footer">
+  <nav>
+    <ul>
+      <li id="navbar-right" class="navbar-collapse collapse">
+      <% if current_user.nil? %>
+        <a href="/auth/facebook" class="btn btn-block btn-social btn-lg btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social', 'click', 'btn-lg']);"><i class="fa fa-facebook"></i>Sign in with Facebook</a>
+      <% end %>
+      </li>
+      <li id="navbar-right" class="navbar-collapse collapse">
+        <% if current_user %>
+        <%= link_to('Logout', logout_path, :method => :delete, class: "btn btn-lg btn-default btn-home") %>
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div id="hey-good-lookin">
+  <% if current_user %>
+    <h1 class="home">Hey, good looking <%= image_tag current_user.image_url, class: "img-circle img-thumbnail home-image" %></h1>
+  <% end %>
+</div>

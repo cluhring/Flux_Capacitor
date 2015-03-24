@@ -1,0 +1,15 @@
+<div class="row station-s">
+  <div class="col-md-4"></div>
+  <div class="station-show col-md-4">
+    <h1>Station Info</h1>
+    <% ["id", "fuel_type_code", "station_name", "street_address", "city", "state",
+    "zip", "intersection_directions", "station_phone", "access_days_time", "cards_accepted",
+    "bd_blends", "e85_blender_pump", "hy_status_link", "ng_fill_type_code", "ng_psi",
+    "ng_vehicle_class", "ev_level1_evse_num", "ev_level2_evse_num", "ev_dc_fast_num",
+    "ev_other_evse", "ev_network", "ev_network_web", ].each do |param| %>
+    <b><%= param %>: </b><%= @station.alt_fuel_station[param] %><br>
+    <% end %>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+<div class="station-s"></div>

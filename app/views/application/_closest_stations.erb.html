@@ -1,0 +1,11 @@
+<h3> Closest Charging Stations: </h3>
+  <% @closest_stations.each do |station| %>
+<div class="closest_stations container col-md-12">
+    <b><%= station.station_name %>: <%= station.fuel_type_code %></b><br>
+    <b>Address:</b> <%= station.street_address %>,
+    <%= station.city %>, <%= station.state %> <%= station.zip %><br>
+    <b>Phone:</b> <%= station.station_phone %><br>
+    <b>Distance from current location:</b> <%= station.distance %> miles <br>
+    <%= link_to 'View Details', station_path(station.id)%>
+</div>
+  <% end %>
