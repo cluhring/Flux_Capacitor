@@ -13,6 +13,7 @@
   var current_long = e.latlng.lng;
 
   $.ajax ({
+    debugger
     data: { latitude1: current_lat, longitude1: current_long, latitude2: <%= session[:latitude1] %>, longitude2: <%= session[:longitude1] %> },
     type: 'post',
     url: '/stations'
