@@ -12,11 +12,11 @@
   var current_lat = e.latlng.lat;
   var current_long = e.latlng.lng;
 
-  // $.ajax ({
-  //   data: { latitude1: current_lat, longitude1: current_long, latitude2: <%= session[:latitude1] %>, longitude2: <%= session[:longitude1] %> },
-  //   type: 'post',
-  //   url: '/stations'
-  // });
+  $.ajax ({
+    data: { latitude1: current_lat, longitude1: current_long, latitude2: <%= session[:latitude1] %>, longitude2: <%= session[:longitude1] %> },
+    type: 'post',
+    url: '/stations'
+  });
   L.marker(e.latlng).addTo(map)
   .bindPopup("You are here").openPopup();
 
