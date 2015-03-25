@@ -8,7 +8,7 @@ class StationService
 
   def stations
     parse(connection.get do |req|
-      req.params['api_key'] = NrcHZRCeouPvntxWjoqLW5IppXF4LwiDQLySiVMD #ENV['nrel_secret']
+      req.params['api_key'] = 'NrcHZRCeouPvntxWjoqLW5IppXF4LwiDQLySiVMD' #ENV['nrel_secret']
       req.params['format'] = 'json'
       req.params['status'] = 'E'
       req.params['access'] = 'public'
@@ -20,14 +20,14 @@ class StationService
   # /api/alt-fuel-stations/v1/39534.json?api_key=DEMO_KEY
   def station(id)
     parse(connection.get("/api/alt-fuel-stations/v1/#{id}") do |req|
-      req.params['api_key'] = NrcHZRCeouPvntxWjoqLW5IppXF4LwiDQLySiVMD #ENV['nrel_secret']
+      req.params['api_key'] = 'NrcHZRCeouPvntxWjoqLW5IppXF4LwiDQLySiVMD' #ENV['nrel_secret']
       req.params['format'] = 'json'
     end)
   end
 
   def closest_stations(lat, long)
     parse(connection.get("/api/alt-fuel-stations/v1/nearest.json?") do |req|
-      req.params['api_key'] = NrcHZRCeouPvntxWjoqLW5IppXF4LwiDQLySiVMD #ENV['nrel_secret']
+      req.params['api_key'] = 'NrcHZRCeouPvntxWjoqLW5IppXF4LwiDQLySiVMD' #ENV['nrel_secret']
       req.params['status'] = 'E'
       req.params['latitude'] = lat
       req.params['longitude'] = long
@@ -38,7 +38,7 @@ class StationService
 
   def routed_stations(lat1, long1, lat2, long2)
     parse(connection.get("/api/alt-fuel-stations/v1/nearby-route.json?") do |req|
-      req.params['api_key'] = NrcHZRCeouPvntxWjoqLW5IppXF4LwiDQLySiVMD #ENV['nrel_secret']
+      req.params['api_key'] = 'NrcHZRCeouPvntxWjoqLW5IppXF4LwiDQLySiVMD' #ENV['nrel_secret']
       req.params['status'] = 'E'
       req.params['route'] = "LINESTRING(#{long1} #{lat1} , #{long2} #{lat2})" #(Turing, Chicago)
       req.params['distance'] = 5 #(Distance from route)
