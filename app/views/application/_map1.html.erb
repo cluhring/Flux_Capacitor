@@ -13,7 +13,7 @@
   var current_long = e.latlng.lng;
 
   $.ajax ({
-    data: { latitude1: current_lat, longitude1: current_long, latitude2: <%= session[:latitude1] %>, longitude2: <%= session[:longitude1] %> },
+    data: { latitude1: current_lat, longitude1: current_long, latitude2: <%= session[:latitude1] ||= 39.749747 %>, longitude2: <%= session[:longitude1] ||= -104.999977 %> },
     type: 'post',
     url: '/stations'
   });
