@@ -1,0 +1,110 @@
+html, body {
+    height: 100%;
+}
+body {
+  background-color: #ffffff;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#address {
+  width: 250px;
+  text-align: left;
+}
+
+.address-search {
+  position: absolute;
+  float: center;
+  top: 580px;
+  text: center;
+}
+
+.station-s {
+  background-image: url(green_car6.jpg);
+  height: 450px;
+}
+
+.station-show {
+  background-color: #f0fff0;
+  float: center;
+  top: 110px;
+  padding-bottom: 10px;
+}
+
+#hey-good-lookin {
+    position:absolute;
+    bottom: 11px;
+    left: 375px;
+}
+
+.map {
+  min-height: 750px;
+  width: 100%;
+}
+
+#facebook {
+  position: absolute;
+  bottom: 10px;
+  right: -5px;
+}
+
+.header {
+  width: 100%;
+  // color: #ffffff;
+  font-size: 95px;
+  position: absolute;
+  top: 0px;
+}
+
+.closest_stats {
+  // border: bold;
+  // border-style: solid;
+  // border-radius: 5px;
+  // border-color: #40BC40;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  left: 10px;
+  text-align: left;
+  position: absolute;
+  top: 10px;
+  text-align: center;
+}
+
+#logo {
+  position: center;
+  text-align: center;
+  top: 5px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.container-home {
+  position: center;
+  text-align: center;
+}
+
+.trip-tables {
+  position: relative;
+  top: 100px;
+}
+
+.stop_point {
+  background-image: url(edelete2.jpeg);
+  width: 24px;
+  height: 24px;
+}
+
+.closest_stations {
+  border: bold;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #40BC40;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  // left: 15px;
+  text-align: left;
+  margin-bottom: 5px;
+  // position: absolute;
+  float: center;
+}
