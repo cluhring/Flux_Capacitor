@@ -11,7 +11,6 @@ class StationsController < ApplicationController
   end
 
   def create
-    require 'pry' ; binding.pry
     session[:latitude2] = params[:latitude1]
     session[:longitude2] = params[:longitude1]
     session[:latitude3] = params[:latitude2]
