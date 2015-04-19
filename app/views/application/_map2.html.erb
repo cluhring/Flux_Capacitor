@@ -76,7 +76,7 @@
   var ctrl = L.Routing.control({
     waypoints: [
       L.latLng (e.latlng.lat, e.latlng.lng),
-      L.latLng (<%= session[:latitude1] %>, <%= session[:longitude1] %>)
+      L.latLng (<%= session[:latitude1] ||= 39.749747 %>, <%= session[:longitude1] ||= -104.999977 %>)
     ],
     routeWhileDragging: true,
     draggableWaypoints: true,

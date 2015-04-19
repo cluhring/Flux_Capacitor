@@ -26,6 +26,7 @@ class StationService
   end
 
   def closest_stations(lat, long)
+    # require 'pry' ; binding.pry
     parse(connection.get("/api/alt-fuel-stations/v1/nearest.json?") do |req|
       req.params['api_key'] = 'NrcHZRCeouPvntxWjoqLW5IppXF4LwiDQLySiVMD' #ENV['nrel_secret']
       req.params['status'] = 'E'
@@ -37,6 +38,7 @@ class StationService
   end
 
   def routed_stations(lat1, long1, lat2, long2)
+    # require 'pry' ; binding.pry
     parse(connection.get("/api/alt-fuel-stations/v1/nearby-route.json?") do |req|
       req.params['api_key'] = 'NrcHZRCeouPvntxWjoqLW5IppXF4LwiDQLySiVMD' #ENV['nrel_secret']
       req.params['status'] = 'E'
