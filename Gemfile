@@ -14,6 +14,7 @@ gem 'omniauth-facebook'
 gem 'figaro'
 gem 'geocoder'
 gem 'faraday'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'byebug'
